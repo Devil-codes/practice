@@ -1,0 +1,47 @@
+* {
+	box-sizing: border-box;
+}
+
+.navbar {
+	border-bottom: 2px solid violet; 
+}
+
+.navbar-brand {
+	padding: 15px;
+	border-right: 1px solid violet;
+}
+
+a {
+	white-space: nowrap;
+}
+
+span img{
+	width: 30px;
+	height: auto;
+	float: right;
+	margin: 10px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	display: inline-block;
+}
+
+#bird{
+	width: 150px;
+	height: auto;
+}
+
+@media (min-width: 992px) and (max-width: 1244px) {
+	#bird{
+	width: 150px;
+	height: auto;
+	float: right;
+}
+}
+
+@media (max-width: 991px) {
+	.navbar-brand {
+	padding: 15px;
+	border-right: none;
+	border-bottom: 1px solid violet;
+}
+}
