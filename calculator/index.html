@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="outer">
+      <input type="text" class="form-control-lg" id="op" value="" placeholder="0" disabled="disable">
+      <div class="container">
+        <div class="row">
+          <button class="col btn btn-secondary m-1" value="1" onclick="op.value+=this.value">1</button>
+          <button class="col btn btn-secondary m-1" value="2" onclick="op.value+=this.value">2</button>
+          <button class="col btn btn-secondary m-1" value="3" onclick="op.value+=this.value">3</button>
+          <button class="col btn btn-secondary m-1" value="+" onclick="op.value+=this.value">+</button>
+        </div>
+        <div class="row">
+          <button class="col btn btn-secondary m-1" value="4" onclick="op.value+=this.value">4</button>
+          <button class="col btn btn-secondary m-1" value="5" onclick="op.value+=this.value">5</button>
+          <button class="col btn btn-secondary m-1" value="6" onclick="op.value+=this.value">6</button>
+          <button class="col btn btn-secondary m-1" value="-" onclick="op.value+=this.value">-</button>
+        </div>
+        <div class="row">
+          <button class="col btn btn-secondary m-1" value="7" onclick="op.value+=this.value">7</button>
+          <button class="col btn btn-secondary m-1" value="8" onclick="op.value+=this.value">8</button>
+          <button class="col btn btn-secondary m-1" value="9" onclick="op.value+=this.value">9</button>
+          <button class="col btn btn-secondary m-1" value="*" onclick="op.value+=this.value">*</button>
+        </div>
+        <div class="row">
+          <button class="col btn btn-secondary m-1" value="(" onclick="op.value+=this.value">(</button>
+          <button class="col btn btn-secondary m-1" value="0" onclick="op.value+=this.value">0</button>
+          <button class="col btn btn-secondary m-1" value=")" onclick="op.value+=this.value">)</button>
+          <button class="col btn btn-secondary m-1" value="/" onclick="op.value+=this.value">/</button>
+        </div>
+        <div class="row">
+          <button class="col-3 btn btn-danger m-1" value="clear" onclick="op.value=''">Clear</button>
+          <button class="col-3 btn btn-secondary m-1" value="." onclick="op.value+=this.value">.</button>
+          <button class="col btn btn-primary m-1" value="=" onclick="calc(op.value)">=</button>
+        </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
