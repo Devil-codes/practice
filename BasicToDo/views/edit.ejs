@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./head.ejs') %>
+    <body>
+        <div class="container p-5">
+            <div class="card p-5 bg-dark text-light">
+                <div class="card-title">Your To-do App</div>
+                <div class="card-body">
+                    <form action="/edit/<%= locals.list[0]?.id %>" method="POST">
+                        <div class="mb-3">
+                            <label for="value" class="form-label">Edit</label>
+                            <input value="<%= locals.list[0]?.todo %>" type="text" class="form-control" id="value" name="value" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                    <a href="/" class="btn btn-secondary mt-3">Back to List</a>
+                </div>
+            </div>
+        </div>
+        <% include('./foot.ejs') %>
+    </body>
+</html>
