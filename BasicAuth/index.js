@@ -7,13 +7,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = new pg.Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'world',
-    password: 'db@postgres',
-    port: 5432
-});
+const db = new pg.Client({});
 
 let userIsLoggedIn = false;
 
