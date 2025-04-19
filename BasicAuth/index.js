@@ -7,7 +7,13 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = new pg.Client({});
+const db = new pg.Client({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'world',
+    password: 'db@postgres',
+    port: 5432
+});
 
 let userIsLoggedIn = false;
 
@@ -22,10 +28,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
+    userIsLoggedIn = false;
     res.render('login.ejs');
 });
 
 app.get('/register', (req, res) => {
+    userIsLoggedIn = false;
     res.render('register.ejs');
 });
 
@@ -36,7 +44,7 @@ app.post('/register', (req, res) => {
             console.error('Error inserting user', err.stack);
             res.status(500).send('Error registering user');
         } else {
-            res.redirect(200, '/login');
+            res.redirect('/login');
         }
     });
 });
@@ -49,7 +57,7 @@ app.post('/login', (req, res) => {
             res.status(500).send('Error logging in');
         } else if (result.rows.length > 0) {
             userIsLoggedIn = true;
-            res.redirect(200, '/');
+            res.redirect('/');
         } else {
             res.status(401).send('Invalid username or password');
         }
